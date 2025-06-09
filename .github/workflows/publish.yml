@@ -2,8 +2,6 @@ name: Build Project
 on:
   push:
     branches: [ master, develop ]
-  pull_request:  # 可选：在 PR 时也触发构建
-    branches: [ master, develop ]
 
 jobs:
   build:
