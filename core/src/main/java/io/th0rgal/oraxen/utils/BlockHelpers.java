@@ -12,6 +12,7 @@ import io.th0rgal.oraxen.nms.NMSHandlers;
 import org.apache.commons.lang3.Range;
 import org.bukkit.*;
 import org.bukkit.block.Sign;
+import org.bukkit.block.Skull;
 import org.bukkit.block.*;
 import org.bukkit.block.data.*;
 import org.bukkit.block.data.type.Bed;
@@ -79,7 +80,7 @@ public class BlockHelpers {
 
     public static String validateReplacedSounds(String sound) {
         ConfigurationSection mechanics = OraxenPlugin.get().getConfigsManager().getMechanics().getConfigurationSection("custom_block_sounds");
-        if (mechanics == null) return sound;
+        if (sound == null || mechanics == null) return sound;
 
         sound = sound.replace("minecraft:", "");
         if (sound.startsWith("block.wood") && mechanics.getBoolean("noteblock_and_block")) {
